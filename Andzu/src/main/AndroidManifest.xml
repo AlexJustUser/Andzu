@@ -1,18 +1,21 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.canakkoca.andzu">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application>
 
-        <activity android:name=".base.MainAndzuActivity"/>
+        <activity
+            android:name=".base.MainAndzuActivity"
+            android:exported="false" />
 
         <activity
-            android:theme="@style/AppTheme"
-            android:name=".activities.NetworkLogDetailActivity"/>
+            android:name=".activities.NetworkLogDetailActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
 
-        <service android:name=".bubbles.BubblesService"
+        <service
+            android:name=".bubbles.BubblesService"
             android:enabled="true"
             android:exported="false" />
 

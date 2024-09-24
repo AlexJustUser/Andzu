@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Andzu.iml" filepath="$PROJECT_DIR$/Andzu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Andzu/Andzu-Andzu.iml" filepath="$PROJECT_DIR$/Andzu/Andzu-Andzu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Andzu.iml" filepath="$PROJECT_DIR$/.idea/modules/Andzu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Andzu/Andzu.Andzu.iml" filepath="$PROJECT_DIR$/.idea/modules/Andzu/Andzu.Andzu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Andzu/Andzu.Andzu.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Andzu/Andzu.Andzu.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Andzu/Andzu.Andzu.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Andzu/Andzu.Andzu.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Andzu/Andzu.Andzu.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Andzu/Andzu.Andzu.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Andzu.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Andzu.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Andzu.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Andzu.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Andzu.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Andzu.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Andzu.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Andzu.app.unitTest.iml" />
     </modules>
   </component>
 </project>

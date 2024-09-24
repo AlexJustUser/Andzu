@@ -1,16 +1,19 @@
-package com.canakkoca.sample;
+package com.canakkoca.andzu;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.canakkoca.App;
 import com.canakkoca.andzu.utils.Logger;
 import com.canakkoca.andzu.utils.LoggingInterceptor;
+import com.canakkoca.sample.R;
 
 import java.io.IOException;
 
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    @SuppressLint("StaticFieldLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         App.getInstance().disableAndzu();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
+        if (!Settings.canDrawOverlays(this)) {
             //If the draw over permission is not available open the settings screen
             //to grant the permission.
             Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,

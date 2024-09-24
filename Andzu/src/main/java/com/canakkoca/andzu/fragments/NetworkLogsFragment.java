@@ -2,14 +2,17 @@ package com.canakkoca.andzu.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.canakkoca.andzu.R;
 import com.canakkoca.andzu.base.AndzuApp;
@@ -39,22 +42,22 @@ public class NetworkLogsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_networklogs,container,false);
+        return inflater.inflate(R.layout.fragment_networklogs, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
-        networkRecyleView = (RecyclerView) view.findViewById(R.id.list_networklogs);
+        networkRecyleView = view.findViewById(R.id.list_networklogs);
 
-        DaoSession daoSession = ((AndzuApp)getActivity().getApplication()).getDaoSession();
+        DaoSession daoSession = ((AndzuApp) getActivity().getApplication()).getDaoSession();
         networkLogDao = daoSession.getNetworkLogDao();
 
         networkRecyleView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity()
                 .getApplicationContext());
         networkRecyleView.setLayoutManager(mLayoutManager);
-        networkRecyleView.addItemDecoration(new DividerItemDecoration(getActivity(),LinearLayoutManager.VERTICAL));
+        networkRecyleView.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
 
         networkLogQuery = networkLogDao.queryBuilder().orderDesc(NetworkLogDao.Properties.Id).build();
 
@@ -67,8 +70,8 @@ public class NetworkLogsFragment extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 Intent intent = new Intent(getActivity().getApplicationContext()
-                        ,NetworkLogDetailActivity.class);
-                intent.putExtra("networkLog",networkLogs.get(position));
+                        , NetworkLogDetailActivity.class);
+                intent.putExtra("networkLog", networkLogs.get(position));
                 startActivity(intent);
             }
 

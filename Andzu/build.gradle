@@ -1,46 +1,53 @@
 apply plugin: 'com.android.library'
 apply plugin: 'org.greenrobot.greendao'
-apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.isacan'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 34
     buildToolsVersion "26.0.2"
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion 29
+        targetSdkVersion 34
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        multiDexEnabled true
     }
     buildTypes {
         release {
-            debuggable true
+            matchingFallbacks = ['release']
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            debuggable true
+            matchingFallbacks = ['debug']
             minifyEnabled false
         }
     }
     compileOptions {
     }
+    namespace 'com.canakkoca.andzu'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.annotation:annotation-jvm:1.8.2'
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2') {
         exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:26.0.2'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:design:26.0.2'
-    compile 'com.android.support:recyclerview-v7:26.0.2'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    compile 'org.greenrobot:greendao:3.2.2'
-    compile 'com.google.code.gson:gson:2.7'
+    }
+    implementation 'com.android.support:multidex:2.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.android.support:appcompat-v7:22.1.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.9.0"))
+    androidTestImplementation 'junit:junit:4.12'
+
 }

@@ -1,4 +1,4 @@
-package com.canakkoca.sample;
+package com.canakkoca;
 
 import com.canakkoca.andzu.base.AndzuApp;
 
