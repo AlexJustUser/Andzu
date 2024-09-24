@@ -1,7 +1,11 @@
 package com.canakkoca.andzu.base;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -24,17 +28,35 @@ public class MainAndzuActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainandzu);
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager = findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // handle button activities
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.mybutton) {
+            // do something here
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void setupViewPager(ViewPager viewPager) {

@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Andzu</string>
     <string name="share_info">Share Information</string>
+    <string name="request_latency">Request latency :</string>
+    <string name="textview">TextView</string>
+    <string name="headers">Headers</string>
+    <string name="asda">asda</string>
+    <string name="http_post_data">Http Post Data</string>
+    <string name="body_response">Body Response</string>
+    <string name="share_all_info">Поделиться данными</string>
 </resources>

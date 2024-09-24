@@ -5,14 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.TabLayout
+<!--    <include-->
+<!--        android:id="@+id/tool_bar"-->
+<!--        layout="@layout/tool_bar" />-->
+
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabMode="fixed"
         app:tabGravity="fill"/>
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
